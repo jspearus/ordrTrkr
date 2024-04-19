@@ -22,7 +22,8 @@ from backend import views
 router = routers.DefaultRouter()
 router.register(r'orderrecord', views.OrderRecordViewSet)
 router.register(r'storetimes', views.StoreTimesViewSet)
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-     path('api/', include(router.urls))  
+    path('api/', include(router.urls))  
 ]

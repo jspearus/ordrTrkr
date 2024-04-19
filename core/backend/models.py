@@ -9,8 +9,9 @@ class OrderRecord(models.Model):
     aile_numbers = models.CharField(max_length=60)
     store_number = models.CharField(max_length=2)
     lane_number = models.CharField(max_length=5)
-    time_started = models.DateTimeField(default=timezone.now)
-    time_finished = models.DateTimeField()
+    time_started = models.DateTimeField()
+    time_due = models.DateTimeField(blank=True, null=True)
+    time_finished = models.DateTimeField(blank=True, null=True)
     
     def __str__(self):
         return str(self.store_number) + ' : ' + str(self.id) + ' : ' + str(self.time_started)
